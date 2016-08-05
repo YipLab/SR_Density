@@ -1,0 +1,18 @@
+
+DataFolder=${PWD}
+cd ~/image_store/Scripts/PythonSrc/
+NameScript="Density"
+NameScriptPy=$NameScript".py"
+NameScriptCfg=$NameScript"Config.py"
+NoHupFile=$DataFolder"/"$NameScript".NoHup"
+rm -f $NoHupFile
+python  $NameScriptCfg $DataFolder
+#python -i $NameScriptPy $DataFolder
+nohup python $NameScriptPy $DataFolder > $NoHupFile&
+
+
+#DataFolder=${PWD}
+#cd ~/image_store/Scripts/PythonSrc/
+#python NNSingleChannelConfig.py $DataFolder
+#nohup python NNSingleChannel.py $DataFolder&
+#python -i NNSingleChannel.py $DataFolder
